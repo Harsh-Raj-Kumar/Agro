@@ -1,0 +1,238 @@
+.navBar {
+    width: auto;
+    height: 10vh;
+    background-color: #f5f5f5;
+    display: flex;
+    /* justify-content: center; */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* border-bottom: 2px solid #f5f5f5; */
+    /* border: 1px solid red; */
+}
+
+.navContainer {
+    width: 100%;
+    height: 100%;
+    /* max-width: 1024px; */
+    display: flex;
+    position: relative;
+    /* align-items:center; */
+    /* border: 2px solid black; */
+}
+
+.logo {
+    /* height: 10vh; */
+    height: 100%;
+    display: flex;
+    flex: 1;
+    /* align-items: center; */
+    justify-content: flex-start;
+    /* padding-bottom: 2px; */
+    /* padding-left: 1rem; */
+    /* border: 1px solid red; */
+}
+
+.navItems {
+    /* height: 10vh; */
+    height: 100%;
+    display: flex;
+    flex: 3;
+    align-items: center;
+    /* gap: 4rem; */
+    justify-content: flex-end;
+    /* border: 1px solid green; */
+}
+
+.items {
+    width: 14%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+.Farminglist {
+    position: absolute;
+    top: 10vh;
+    width: 98%;
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    gap: 6px;
+    /* border: 1px solid red; */
+}
+
+.options {
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    color: gray;
+    /* border: 1px solid red; */
+}
+
+.circle-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 15%; */
+}
+
+.avatar-initial {
+    color: white;
+    font-size: 24px;
+}
+
+
+
+.items span:nth-of-type(1) {
+    width: max-content;
+    /* To avoid that ziggling effect on hovering upon the remaing part of width */
+    height: 60%;
+    /* Set a fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform .2s;
+    /*for zoom*/
+    /* border: 1px solid black; */
+}
+
+.options:hover {
+    border-bottom: 2px solid #2ea44f;
+    color: #2a2b2e;
+    font-weight: 500;
+    transform: scale(1.1);
+}
+
+.items span:nth-of-type(1):hover,
+.activeNavItem {
+    max-width: max-content;
+    color: #fff;
+    /* border: 1px solid red; */
+    background-color: #2ea44f;
+    padding: 0rem 0.4rem;
+    border-radius: 0.5rem;
+    transform: scale(1.1);
+    /*for zoom level*/
+}
+
+.navbtn {
+    /* height: 10vh; */
+    height: 100%;
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.avatarbtn {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+    cursor: pointer;
+}
+
+.Btn {
+    width: 50%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    position: relative;
+    /* For absolute for button */
+}
+
+.Btn button {
+    width: 100%;
+    background: #e57c00;
+    border: 1px solid #e57c00;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    outline: 0;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    position: absolute;
+    /* Add position absolute */
+    top: 0%;
+    /* Vertically center the button */
+    transform: translateY(-50%);
+    /* Adjust for vertical centering */
+}
+
+.Btn button:hover,
+.Btn button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #e57c00;
+}
+
+.Btn button:active {
+    opacity: .5;
+}
+
+.profile {
+    /* width: 120px;
+    height: 100px; */
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    /* border: 1px solid red; */
+    margin-top: 10vh;
+    border-radius: 5%;
+    position: absolute;
+    /* top: 4px; */
+    right: 10px;
+    z-index: 1;
+    padding: 4px;
+    gap: 5%;
+}
+
+.profileItem {
+    width: max-content;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* padding: 2%; */
+    margin: 1% 0%;
+    cursor: pointer;
+    /* background-color: whitesmoke; */
+    /* border: 1px solid black;s */
+}
+
+/* .profileItem:hover {
+    background-color: whitesmoke;
+} */

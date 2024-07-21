@@ -1,0 +1,115 @@
+.sensorContainer {
+    width:auto;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    /* border: 1px solid black; */
+}
+
+.sensorContHeading {
+   width: 100%;
+   height: 20px;
+   /* border: 1px solid red; */
+}
+
+.sensorContMiddle {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* border: 1px solid green; */
+}
+
+.lineGraphContainer {
+   width: 60%;
+   /* background-color: whitesmoke; */
+   /* height: max-content; */
+   /* border: 1px solid black; */
+}
+
+.gaugeContainer {
+    width: 30%;
+    /* height: 250px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+.gaugeGraphCont {
+    /* width: 40%;
+    height: 90%; */
+    overflow: none;
+    /* border: 1px solid green; */
+}
+
+.sensorContBottom {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid red; */
+}
+
+.sensorContBottomRight {
+    width : 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* position: relative; */
+    /* border: 1px solid green; */
+}
+
+.sensorContBottomRight button {
+    width: 25%;
+    background-color: #008000;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    /* position: absolute; 
+    left: 0; */
+    margin: 0;
+    padding :0;
+}
+
+.sensorContBottomRight button:hover {
+    /* width: 25%; */
+    background-color: #2ea44f;
+    /* font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif; */
+}
+
+.sensorContBottomLeft {
+    width : 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* border: 1px solid green; */
+}
+
+.sensorContBottomLeft button {
+    width: 30%;
+    background-color: teal;
+    font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+    position: absolute;
+    right: 10%;
+    margin: 0;
+    padding :0;
+}
+
+.sensorContBottomLeft button:hover {
+    /* width: 30%; */
+    background-color: #7FC9AA;
+    /* font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif; */
+}
+
+.moistureAlert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

@@ -1,0 +1,77 @@
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+#include <ESP8266mDNS.h>
+#include <DHT.h>
+
+
+#define DHTPIN 5          // Pin connected to the DHT sensor
+#define DHTTYPE DHT22     // DHT sensor type
+#define MOTORPIN 6        // Pin connected to the motor
+#define MOISTUREPIN A0    // Pin connected to the soil moisture sensor
+
+const char* ssid = "INGGNELPFGG1VT3 5043";
+const char* password = "777h8$0G";
+
+ESP8266WebServer server(80);
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+  delay(1000);
+
+  WiFi.begin(ssid, password);
+  Serial.println("\nConnecting to WiFi...");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nConnected to WiFi");
+
+  if (!MDNS.begin("esp8266")) {
+    Serial.println("Error setting up MDNS responder!");
+    while (1) {
+      delay(1000);
+    }
+  }
+  Serial.println("mDNS responder started");
+ 
+  MDNS.addService("http", "tcp", 80);
+
+  dht.begin();
+
+  server.on("/data", HTTP_GET, handleData);
+  server.begin();
+  Serial.println("HTTP server started");
+
+  Serial.print("IP Address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() {
+  server.handleClient();
+ 
+  int moistureLevel = analogRead(MOISTUREPIN);
+  Serial.print("Moisture Level: ");
+  Serial.println(moistureLevel);
+
+  if (moistureLevel > 100) {
+    digitalWrite(MOTORPIN, HIGH); // Run the motor
+  } else {
+    digitalWrite(MOTORPIN, LOW);  // Stop the motor
+  }
+}
+
+void handleData() {
+  float temperature = dht.readTemperature(); // Read temperature in Celsius
+  float humidity = dht.readHumidity();       // Read humidity
+
+  if (isnan(temperature) || isnan(humidity)) {
+    server.send(500, "text/plain", "Failed to read from DHT sensor");
+    return;
+  }
+
+  String response = "Temperature: " + String(temperature) + " °C\n";
+  response += "Humidity: " + String(humidity) + " %";
+
+  server.send(200, "text/plain", response);
+}
